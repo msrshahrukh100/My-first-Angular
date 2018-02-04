@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	diaryText = ""
-	test = "shahrukh"
+	diaryEntries = [{text: "# Shddahrukh"}]
+
+
+	addEntry(data:{text:string}){
+		this.diaryEntries.push({text: data.text})
+	}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-write',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WriteComponent implements OnInit {
 
+	@Output() addToDisplay = new EventEmitter<{text: string}>()
+	diaryText = ""
   constructor() { }
 
   ngOnInit() {
   }
 
+  onEntryAdded(){
+  	this.addToDisplay.emit({text: this.diaryText})
+  }
 }

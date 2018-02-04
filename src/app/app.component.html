@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col s7">
-      <app-display></app-display>
+      <app-display *ngFor="let entry of diaryEntries"
+      [entry]=entry></app-display>
     </div>
-    <div class="col s5" style="position: fixed;top: 50%; left: 50%;">
-      <app-write></app-write>
+    <div class="col s5">
+      <app-write (addToDisplay)="addEntry($event)"></app-write>
     </div>
   </div>
 </div>
